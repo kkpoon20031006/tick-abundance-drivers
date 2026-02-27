@@ -3,6 +3,9 @@ Reproducible workflow for modeling Ixodes scapularis nymph density using multi-s
 
 This repository supports a multi-site analysis investigating how host populations, climate variability, and habitat structure influence the density of blacklegged tick (Ixodes scapularis) nymphs. The workflow integrates standardized NEON tick and small-mammal datasets with deer harvest records, temperature data, and NLCD land cover rasters to fit linear mixed-effects (LMER) and generalized additive (GAM) models.
 
+Download the full data archive here:
+* [Link to Google Drive](https://drive.google.com/drive/folders/1jJp24PxtIuCXjXVlhJW9c00l7PPKvmxz?usp=sharing)
+
 # Reproducibility
 To reproduce the full analysis from raw data to figures:
 ```
