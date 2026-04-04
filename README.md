@@ -37,17 +37,41 @@ Ecological Drivers of Tick Abundance/
 │   ├── Deer Data Files/
 │   ├── Landcover Data Files/
 │   └── Ixodes_Pathogens_County_Status_Geodata_1996_2022/
-├── .RData Files/
+├── RData Files/
 │   ├── Processed Data Files/
 │   ├── Lag Files/
 │   └── modelanalysis.RData
-├── .csv Files/
+├── csv Files/
 ├── Figures/
 │   ├── Figures (PDF)/
 │   └── Figures (PNG)/
 └── Appendix Tables/
 ```
+# Before Running: Manual Data Downloads Required
 
+### NEON Data
+NEON data files are not included in the repository or Google Drive archive due to 
+data redistribution restrictions. On the first run, `neondatadownload.R` will 
+automatically download the following files directly from the NEON data portal:
+- `tickneondata_RELEASE-2025.RData`
+- `mouseneondata_RELEASE-2025.RData`
+- `weatherneondata_RELEASE-2025.RData`
+
+These will be saved automatically to `Raw Data/NEON Data Files/`. An internet 
+connection is required. Subsequent runs will skip the download if the files are 
+already present.
+
+### NLCD Land Cover Rasters
+NLCD rasters are not included in the repository or Google Drive archive due to 
+their large file size (~2–4 GB each). Detailed download and renaming instructions 
+are provided at the top of `processedland.R`. Briefly:
+
+1. Go to https://www.mrlc.gov/data
+2. Under "Projects" select "Annual NLCD", under "Products" select "Land Cover"
+3. Download "Land Cover (CONUS)" for each year 2013–2023
+4. Unzip, rename each .tif to its year (e.g. `2013.tif`), and place in:
+   `Raw Data/Landcover Data Files/`
+   
 # Scripts Overview
 Main entry point
 * `Main.R` – Runs the full analysis pipeline from start to finish.
@@ -93,14 +117,14 @@ Figures and tables
 # Dependencies
 R version: 4.2.1
 
-Required packages: `dplyr`, `ggplot2`, `patchwork`, `mgcv`, `gratia`, `RColorBrewer`,`sf`, `raster`, `rnaturalearth`, `rnaturalearthdata`, `lme4`, `MuMIn`, `car`, `lubridate`, `neonUtilities`, `neonOS`, `Rcapture`
+Required packages: `dplyr`, `ggplot2`, `patchwork`, `mgcv`, `gratia`,`sf`, `raster`, `rnaturalearth`, `lme4`, `MuMIn`, `car`, `lubridate`, `neonUtilities`, `neonOS`, `Rcapture`, `cowplot`
 
 Install all dependencies with: 
 ```
 install.packages(c(
   "dplyr","ggplot2","patchwork","mgcv","gratia","sf","raster",
   "rnaturalearth","lme4","MuMIn","car","lubridate",
-  "neonUtilities","neonOS","Rcapture"
+  "neonUtilities","neonOS","Rcapture","cowplot"
 ))
 ```
 # Acknowledgement
