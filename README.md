@@ -8,7 +8,7 @@ There are two ways to reproduce this analysis. Read both options before deciding
 
 ### Option 1 — Reproduce analyses and figures from pre-processed data (recommended) 
 
-This is the minimal path to replicate all results and figures. Pre-processed `.RData` files are provided in the Google Drive archive and are already in place if you downloaded the full repository. No NEON download or land cover processing is required.
+This is the minimal path to replicate all results and figures. Pre-processed `.RData` files are provided in the Zenodo repository and are already in place if you downloaded the full repository. No NEON download or land cover processing is required.
 ```
 setwd("path/to/Ecological Drivers of Tick Abundance")
 source("R Scripts/Main.R")
@@ -129,8 +129,6 @@ install.packages(c(
   "neonUtilities", "neonOS", "lubridate", "raster"
 ))
 ```
-# Acknowledgement
-This project was conducted under the supervision of Professor David Allen at Middlebury College. I am grateful for his guidance, feedback, and continued support in the development of this analysis.
 
 # Contact
 **Kingsley Poon**  
